@@ -42,6 +42,9 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
+        <Reference Include="ChessModel">
+          <HintPath>..\..\ChessModel\ChessModel\bin\Debug\net6.0\ChessModel.dll</HintPath>
+        </Reference>
         <Reference Include="Microsoft.CSharp" />
         <Reference Include="System" />
         <Reference Include="System.Data" />
