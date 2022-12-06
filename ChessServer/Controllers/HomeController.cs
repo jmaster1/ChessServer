@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Chess.Model;
 
 namespace ChessServer.Controllers
 {
     public class HomeController : Controller
     {
+        private Desk desk = new Desk();
+        
         public ActionResult Index()
         {
             return View();
@@ -15,7 +18,9 @@ namespace ChessServer.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            desk.CreateMap();
+            var piece = desk.GetPieceAt(Vector2Int.Zero);
+            ViewBag.Message = "Your application description page." + piece.GetPieceType();
             return View();
         }
 
